@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let person = {
+            name: "John",
+            age: 30,
+            city: "New York",
+            'address': "123 Main St" 
+        }
+
+        // 使用对象
+
+        console.log(person.name); // John
+        console.log(person.age); // 30
+        console.log(person.city); // New York
+        
+        // 修改对象属性
+
+        person.age = 35;
+        console.log(person.age); // 35
+
+        // 添加新属性
+
+        person.gender = "male";
+        console.log(person.gender); // male
+
+        // 删除属性
+
+        delete person.city;
+        console.log(person); // {name: "John", age: 35, gender: "male"}
+
+        // 查找属性
+        console.log(person["name"])
+        console.log(person['address'])
+
+        // 对象的方法
+        let dog = {
+            uname: "Rufus",
+            breed: "Labrador",
+            bark: function() {  // 相当于把函数赋值给对象的属性
+                document.write("Woof!");
+            }
+        }
+
+        dog.bark(); // Woof!
+
+        // 遍历对象属性
+        for(let key in dog) {
+            document.write(key + ": " + dog[key] + "<br>");
+        }
+
+        // 遍历数组元素
+        let fruits = ["apple", "banana", "orange"];
+        // for(let fruit in fruits) {   // fruit是一个字符串型
+        //     document.write(fruit + "<br>" + fruits[fruit]);
+        // } 不使用这种方法
+
+        for(let i = 0; i < fruits.length; i++) {   // i是一个数字型
+            document.write(i + ": " + fruits[i] + "<br>");
+        }
+
+        let obj = {};
+        obj.name = "mike";
+        // obj.["age"] = 25; 错误
+
+        let obj = null;
+    </script>
+</body>
+</html>

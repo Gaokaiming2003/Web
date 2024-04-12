@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 100px;
+            background-color: greenyellow;
+            border-top-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <script>
+        const box = document.querySelector('.box')
+
+        box.style.width = "500px"
+        box.style.backgroundColor = "red"   // 多个单词的，小驼峰命名法
+
+        box.style.border = "1px solid black"
+        box.style.borderTop = "2px solid red"
+    </script>
+</body>
+</html>

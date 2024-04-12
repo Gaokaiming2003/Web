@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 不带参数的函数
+        function hello() {
+            alert("Hello World!");
+        }
+        // 带参数的函数
+        function greet(name) {
+            alert("Hello " + name + "!");
+        }
+
+        // 数组作为参数
+        function sum(arr) {
+            var sum = 0;
+            for (var i = 0; i < arr.length; i++) {
+                sum += arr[i];
+            }
+            return sum;
+        }
+
+        let res = sum([1, 2, 3, 4, 5]);
+        document.write(res);
+        // 调用函数
+        hello();
+
+        greet("John");
+    </script>
+</body>
+</html>

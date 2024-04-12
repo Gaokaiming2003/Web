@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        .box {
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">box</div>
+    <script>
+        // 获取DOM对象
+        const box = document.querySelector('.box')
+
+        //修改DOM对象属性
+        console.log(box.innerText) // box
+        box.innerText = 'new text' // new text
+
+        // box.innerText = '<strong>new text</strong>' // 不解析内部标签
+        box.innerHTML = '<strong>new text</strong>' // 解析内部标签
+    </script>
+</body>
+</html>

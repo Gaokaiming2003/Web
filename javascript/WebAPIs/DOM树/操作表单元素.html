@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <input type="text" id="input2" value="请输入"> -->
+    <input type="checkbox" id="checkbox1">
+    <button disabled>按钮</button>  <!--属性和值相等，可以直接写成disabled -->
+    <script>
+        // const uname = document.querySelector('input')
+        // console.log(uname.ariaPlaceholder) // 通过.value属性获取输入框的值
+        // uname.type = 'password' // 通过.type属性修改输入框的类型
+
+        const checkbox = document.querySelector('input')
+        console.log(checkbox.checked)
+
+        checkbox.checked = true // 通过.checked属性修改复选框的状态
+
+        const button = document.querySelector('button')
+        button.disabled = false
+    </script>
+</body>
+</html>

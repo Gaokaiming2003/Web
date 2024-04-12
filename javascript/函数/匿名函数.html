@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 匿名函数
+        var add = function(a, b) {
+            return a + b;
+        }
+        console.log(add(1, 2)); // 3
+
+        // 箭头函数
+        var add = (a, b) => a + b;
+        console.log(add(1, 2)); // 3
+        // 箭头函数可以省略return关键字，并且可以直接返回表达式的值
+
+        // 立即执行函数
+        (function() {
+            console.log("hello world");
+        })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        .box {
+            
+        }
+    </style>
+</head>
+<body>
+    
+        <div style="height: 123px">
+            <span>123</span>
+            <h4>第一季度</h4>
+        </div>
+        <div style="height: 456px">
+            <span>456</span>
+            <h4>第二季度</h4>
+        </div>
+        <div style="height: 789px">
+            <span>789</span>
+            <h2>第三季度</h2>
+        </div>
+        <div style="height: 221px;">
+            <span>210</span>
+            <h2>第四季度</h2>
+        </div>
+    </div>
+    <script>
+        let nums = []
+        for(let i = 0; i < 4; i++) {
+            nums.push(prompt("请输入第${i+1}个数字："))
+        }
+        
+        // 开头
+        document.write('<div class="box">')
+
+        // 中间
+
+        // 结尾
+        document.write('</div>')
+
+    </script>
+</body>
+</html>

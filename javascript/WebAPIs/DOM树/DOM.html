@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <div class="box">123</div>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <script>
+        const div = document.querySelector('div');
+        let box = document.querySelector('.box')
+        console.log(box)
+        console.log(div)
+
+        let ul = document.querySelector('ul li:first-child')
+        console.log(ul)
+
+        let li_all = document.querySelectorAll('ul li')
+
+        console.log(li_all)
+
+        for(let i = 0; i < li_all.length; i++) {
+            console.log(li_all[i])
+        }
+    </script>
+</body>
+</html>

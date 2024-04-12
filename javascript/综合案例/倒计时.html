@@ -1,0 +1,31 @@
+<!-- 按钮60s后才能点击 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <textarea id="textarea">请阅读</textarea> <!-- 文本域 -->
+    <br>
+    <button id="btn" disabled>我已阅读(3)</button> <!-- 按钮 -->
+    <script>
+        const button = document.querySelector('button')
+
+        console.log(button.innerHTML) // 要获得button的内容要用innerHTML, button是双标签
+        let count = 3 // 倒计时秒数
+
+        let n = setInterval(function() {
+            count--
+            button.innerHTML = `我已阅读(${count})`
+            if (count === 0) {
+                button.innerHTML = '我已阅读'
+                button.disabled = false // 倒计时结束后按钮可以点击
+                clearInterval(n) // 停止定时器
+
+                button.innerHTML = '同意'
+            }
+        }, 1000)
+    </script>
+</body>
+</html>

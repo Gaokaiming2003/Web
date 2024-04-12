@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        div {
+            background-color: green;
+            padding: 10px;
+            
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <script>
+        const div = document.querySelector('div')
+
+        div.addEventListener('mouseenter', function() {
+            div.style.backgroundColor = "black"
+        })
+
+        div.addEventListener('mouseleave', function() {
+            div.style.backgroundColor = "yellow"
+        })
+    </script>
+</body>
+</html>

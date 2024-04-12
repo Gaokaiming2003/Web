@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>食品展示</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f2f2f2;
+    }
+    .container {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+        text-align: center;
+        color: #333;
+    }
+    .food-item {
+        display: flex;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+    .food-item img {
+        width: 200px;
+        height: 150px;
+        object-fit: cover;
+    }
+    .food-item .info {
+        padding: 15px;
+    }
+    .food-item h2 {
+        margin: 0;
+        color: #333;
+    }
+    .food-item p {
+        margin: 5px 0;
+        color: #666;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>食品展示</h1>
+    <div class="food-item">
+        <img src="https://th.bing.com/th/id/OIP.FJ-_SACF4n0tEJ7cDiE0jQHaE8?rs=1&pid=ImgDetMain" alt="Food 1">
+        <div class="info">
+            <h2>美味汉堡</h2>
+            <p>价格: ¥20</p>
+            <p>描述: 一份美味的汉堡，加上新鲜的配料。</p>
+        </div>
+    </div>
+    <div class="food-item">
+        <img src="https://th.bing.com/th/id/R.1d5c456db0ec31e8bee38b839b1a826b?rik=1%2fldQ8H1BV1iQA&riu=http%3a%2f%2fsnowcoal.com%2fIMAGES_6431%2f201411%2f14164006183641.jpg&ehk=S8RDQs2uV7djPWkihPsKCaHLTrAQl82db2vu6GtJ8IU%3d&risl=&pid=ImgRaw&r=0" alt="Food 2">
+        <div class="info">
+            <h2>蔬菜沙拉</h2>
+            <p>价格: ¥15</p>
+            <p>描述: 一份健康的蔬菜沙拉，清爽可口。</p>
+        </div>
+    </div>
+    <div class="food-item">
+        <img src="https://th.bing.com/th/id/OIP.U5ca6TzTHPFCWe1KhCQ3iQHaLH?rs=1&pid=ImgDetMain" alt="Food 3">
+        <div class="info">
+            <h2>意大利面</h2>
+            <p>价格: ¥25</p>
+            <p>描述: 新鲜的意大利面配上特制的番茄酱。</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

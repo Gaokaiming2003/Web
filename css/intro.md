@@ -225,7 +225,7 @@ p.right {...}
 
 ![alt text](img/背景属性.png)
 
-*  background-color
+* background-color
 取值：transparent 透明
 
 * background-image
@@ -294,3 +294,5 @@ solid实线、dashed虚线、dotted点线、double双线、inset内嵌的3D线�
 #### 合并
 
 ### 定位
+
+## 引入外部css文件

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1">
+        <thead>
+            <th>姓名</th>
+            <th>年龄</th>
+        </thead>
+        <script>
+            let data = [
+                {name: '张三', age: 20},
+                {name: '王五', age: 30},
+                {name: '李四', age: 25}
+            ]
+        
+        for(let i = 0; i < data.length; i++) {
+            document.write('<tr><td>' + data[i].name + '</td><td>' + data[i].age + '</td></tr>')
+        }
+           
+        </script>
+    </table>
+</body>
+</html>

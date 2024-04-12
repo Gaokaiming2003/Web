@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>学生信息</h2>
+    <script>
+        let name = prompt("请输入学生姓名：");
+        let age = prompt("请输入学生年龄：");
+        let gender = prompt("请输入学生性别：");
+        let grade = prompt("请输入学生年级：");
+        let address = prompt("请输入学生住址：");
+        let phone = prompt("请输入学生手机号码：");
+
+        document.write(`姓名：${name}<br>`);  // 用${}来表示变量
+        document.write(`年龄：${age}<br>`);
+        document.write(`性别：${gender}<br>`);
+        document.write(`年级：${grade}<br>`);
+        document.write(`住址：${address}<br>`);
+        document.write(`手机号码：${phone}<br>`);
+        document.write('\
+        <button onclick="window.close()">关闭窗口</button>\
+        ')
+    </script>
+</body>
+</html>
