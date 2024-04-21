@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a {
+            font-size: large;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+   <a href="https://www.bing.com"><span>5</span>秒钟跳转</a>
+   <script>
+    const a = document.querySelector('a')
+    let number = 5
+    let id = setInterval(function() {
+        number--
+        a.innerHTML = `<span>${number}</span>秒钟跳转`
+        if(number === 0) {
+            location.href = "https://www.bing.com"
+            clearInterval(id)
+        }
+    }, 1000)
+    
+   </script>
+</body>
+</html>

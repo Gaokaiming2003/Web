@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .father {
+
+        }
+        .baby {
+            width: 200px;
+            height: 100px;
+            background-color: rgb(182, 144, 144);
+        }
+    </style>
+</head>
+<body>
+    <div class="grandfather">
+    <div class="father">
+        111
+        <div class="baby"></div>
+    </div>
+    </div>
+    <script>
+        const baby = document.querySelector('.baby')
+        console.log(baby);
+        console.log(baby.parentNode)  // <div class="father
+        console.log(baby.parentNode.parentNode);
+
+        baby.addEventListener('click', function() {
+            this.parentNode.style.display="none"
+        })
+
+        // baby.previousElementSibling
+        // baby.nextElementSibling
+    </script>
+</body>
+</html>

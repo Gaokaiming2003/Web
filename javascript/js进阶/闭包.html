@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function outer() {
+        //     const a = 1
+        //     function inner() {
+        //         console.log(a)
+        //     }
+        //     inner()
+        // }
+        // outer()
+
+        /* 常见的闭包形式：外部可以使用函数内部的变量 */
+        function outer() {
+            let a = 1
+            function inner() {
+                console.log(a)
+            }
+            return inner   // 返回一个函数
+        }
+
+        // outer()  === inner === function inner() {}
+        const func = outer()
+        func() // 调用函数 func()使用了内部outer() 的a(局部)
+
+    </script>
+</body>
+</html>

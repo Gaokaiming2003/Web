@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 属性选择器语法 */
+        input[value] {
+            color: red;
+        }
+        input[type=password] {
+            color: blue;
+        }
+        /* 纯数字需要加引号 */
+        input[data-id="0"] {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" value="123" data-id="0" data-name="text">
+    <input type="password">
+
+</body>
+</html>

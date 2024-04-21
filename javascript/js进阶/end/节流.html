@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            height: 100px;
+            width: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div>0</div>
+    <script src="F:\Web\node_modules\lodash\lodash.min.js"></script>
+    <script>
+        const div = document.querySelector('div')
+        // console.log(div)
+        function fn() {
+            div.innerHTML++
+        }
+        div.addEventListener('mousemove', _.throttle(fn, 500))
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const arr = [1,2,3]
+        // const arr = new Array(1,2,3)
+        Array.prototype.max = function() {
+            return Math.max(...this)   // this指向对象
+        }
+        Array.prototype.min = function() j{
+            return Math.min(...this)
+        }
+        Array.prototype.sum = function() {
+            return this.reduce((prev, item) => prev + item, 0)
+        }
+        console.log(arr.sum());
+    </script>
+</body>
+</html>

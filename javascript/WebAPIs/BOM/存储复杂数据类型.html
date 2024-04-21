@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let obj = {
+            uname: "saury",
+            age: 19,
+            gender: "male"
+        }
+        localStorage.setItem('obj', JSON.stringify(obj)) // 存储
+
+        // console.log(localStorage.getItem('obj').uname); // error, 都是存的字符串
+        console.log(JSON.parse(localStorage.getItem('obj')).uname);
+    </script>
+</body>
+</html>

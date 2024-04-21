@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function fn() {
+            console.log(this) // window
+        }
+
+        window.fn()
+
+        const obj = {
+            name: "saury",
+            sayHi: function() {
+                console.log(this)
+            }
+        }
+        obj.sayHi()   // obj
+    </script>
+</body>
+</html>

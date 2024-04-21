@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 3000px;
+        }
+        div {
+            margin: 100px;
+            overflow: scroll;
+            height: 200px;
+            width: 200px;
+            background-color: green;
+            border: 1px solid #ff00ff;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii
+        iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii
+        iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii
+        iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii
+        iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii
+        iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii
+        iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii
+        iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii
+        iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii
+        iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii
+    </div>
+    <script>
+        // 给window添加页面滚动事件
+        window.addEventListener('scroll', function() {
+            // 获取html元素的写法
+            // document.documentElement => <html>
+            // 获取整个页面的滚动距离
+            // console.log(document.documentElement.scrollTop);
+            const html = document.documentElement.scrollTop
+            // 如果滚动超过100，就出现
+            if(html >= 100) {
+                document.querySelector('div').style.display = 'block'
+            } else {
+                document.querySelector('div').style.display = 'none'
+            }
+        })
+        // const div = document.querySelector('div')
+        // div.addEventListener('scroll', function() {
+        //     console.log(div.scrollTop);
+        // })
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Person() {
+            this.age = 12,
+            this.name = "saury"
+        }
+        
+        function Woman() {
+
+        }
+
+        function Man(name) {
+            this.name = name
+        }
+        // 通过原型继承
+        Woman.prototype = new Person()  // *********************
+        // 通过constructor指向原来的构造函数
+        Woman.prototype.constructor = Woman
+
+        Woman.prototype.baby = function() {
+            
+        }
+        const x = new Woman()
+        console.log(x.prototype);
+        console.log(x)
+
+        Man.prototype = new Person()
+        Man.prototype.constructor = Man
+
+        const y = new Man("saury")
+        console.log(y.prototype)
+        console.log(y)
+    </script>
+</body>
+</html>

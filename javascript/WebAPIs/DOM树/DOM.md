@@ -194,3 +194,146 @@ grandfa -> father -> son
 * mouseenter和mouseleave没有冒泡效果(推荐)
 
 ## 事件委托
+
+利用事件流的特征解决一些开发需求的知识技巧，利用事件冒泡。
+
+给父元素注册事件，当我们触发子元素后，会冒泡到父元素上，从而触发父元素
+
+```javascript
+ul.addEventListener('click', function() {})
+ul li li li li li 
+```
+
+## 阻止默认行为
+
+比如阻止链接的跳转，表单域跳转
+
+```javascript
+form.addEventListener('submit', function(e) {
+            e.preventDefault()
+        })
+```
+
+## 其他事件
+
+### 页面加载事件
+
+加载外部资源(如图片、外联css、JavaScript)加载完毕时触发的事件
+
+事件名:load
+
+给window添加load 事件
+
+```js
+window.addEventListener('load', function(){})
+```
+
+当初始的html文档被完全加载和解析完成之后，DOMContentLoaded事件被触发，而无需等待样式表、图像等完全加载
+事件名：DOMContentLoaded
+
+给document添加DOMContentLoaded事件
+
+### 元素滚动事件
+
+滚动条在滚动的时候持续触发的事件
+
+事件名:scroll
+监听整个页面滚动：window.addEventListener('scroll', function(){})
+
+也可以给某个元素添加滚动事件
+
+#### scrollLeft
+
+被卷去的左侧
+
+#### scrollTop
+
+被卷去的上侧
+
+* 获取元素内容往左、往上滚出去看不到的距离
+* 可读写的:可以获得也可以赋值，数字型的，不带单位
+
+### 页面尺寸事件
+
+resize是浏览器页面大小发生变化时触发的事件
+
+```javascript
+window.addEventListener('resize', function() {
+
+})
+```
+
+获取宽高：
+
+* 获取元素的可见部分宽高(不包含边框，margin,滚动条等)
+* clientWidth、clientHeight
+
+#### 元素尺寸于位置
+
+获取宽高：
+
+* 获取元素自身的宽高,包含元素自身设置的宽高,padding,border
+* offsetWidth、offsetHeight
+
+offset受父亲的影响，相对于父亲的位置(如果有)
+
+```javascript
+element.getBoundingClientRect() // 返回元素的大小及其相对于视口的位置
+```
+
+## DOM节点
+
+DOM中的每一个内容都称为节点
+
+![alt text](img/DOM节点.png)
+
+### 查找节点
+
+#### 父节点查找
+
+* parentNode属性
+* 返回最近一级的父节点，否则返回null
+
+```js
+子元素.parentNode
+```
+
+#### 子节点查找
+
+```js
+父元素.children // 得到伪数组 选择的是亲儿子
+```
+
+#### 兄弟关系查找
+
+1. 下一个兄弟 `element.nextElementSibling`
+2. 上一个兄弟 `element.previousElementSibling`
+
+做上移下移
+
+### 新增节点
+
+* 创建一个新节点
+* 将节点添加到指定元素内部
+
+#### 创建节点
+
+`document.createElement()`
+
+#### 追加节点
+
+插入到这个元素的最后
+`父元素.appendChild(元素名称)`
+
+插入到某个子元素的前面
+`父元素.insertBefore(要插入的元素，在哪个元素前面)`
+ul.insertBefore(li, ul.children[0]) // 插入到一个元素前面
+
+#### 克隆节点
+
+`元素.cloneNode(布尔值)` // true会克隆所有子孙,false只克隆儿子
+
+### 删除元素
+
+必须通过父元素删除
+`父元素.removeChild(要删除的元素)`

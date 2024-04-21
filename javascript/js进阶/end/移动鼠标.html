@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <h2>0</h2>
+    <!-- <script src="F:\Web\node_modules\lodash\lodash.min.js"></script> -->
+    <script>
+        const div = document.querySelector('div')
+        function mouseMove() {
+            document.querySelector('h2').innerHTML++
+        }
+        function debounce(fn, t) {
+            let timer
+            // return 返回一个匿名函数
+
+            // addEvention第二个参数需要一个回调函数
+            return function() {
+                if(timer) {
+                    clearTimeout(timer)
+                } else {
+                    timer = setTimeout(function() {fn()}, t)
+                }
+            }
+        }
+        div.addEventListener('mousemove', debounce(mouseMove, 500))
+    </script>
+</body>
+</html>

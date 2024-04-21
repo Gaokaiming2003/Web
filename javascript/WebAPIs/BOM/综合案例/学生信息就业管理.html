@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+  <h1>新增学员</h1>
+  <form class="info" autocomplete="off">
+    姓名：<input type="text" class="uname" name="uname">
+    年龄：<input type="text" class="age" name="age">
+    性别:
+    <select name="gender" class="gender">
+      <option value="男">男</option>
+      <option value="女">女</option>
+    </select>
+    薪资：<input type="text" class="salary" name="salary">
+    就业城市：<select name="city" class="city">
+      <option value="北京">北京</option>
+      <option value="上海">上海</option>
+      <option value="广州">广州</option>
+      <option value="深圳">深圳</option>
+      <option value="曹县">曹县</option>
+    </select>
+    <button class="add">录入</button>
+  </form>
+
+  <h1>就业榜</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>学号</th>
+        <th>姓名</th>
+        <th>年龄</th>
+        <th>性别</th>
+        <th>薪资</th>
+        <th>就业城市</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script>
+    const datas = [
+        {
+            uid: "202200000",
+            uname: "saury",
+            age: 20,
+            gender: "男",
+            salary: 20000,
+            city: "beijing"
+        }
+    ]
+
+    // 1.存储数据
+    // localStorage.setItem('datas', JSON.stringify(datas)) // 本地存储已经有，没必要重新存一下，执行一次就可以注释掉
+
+    // 2.获取数据
+    let arr = JSON.parse(localStorage.getItem('datas')) || [] // 如果获取的为空就设为[]
+
+    // 3.添加增添事件，根据页面渲染
+    const tbody = document.querySelector('tbody')
+
+    /* 使用map()和join()数组方法实现字符串拼接 */
+
+    function render() {
+        const new_arr = arr.map(function(ele, index) {
+            return `
+            <tr>
+                <td>${ele.uid}</td>
+                <td>${ele.uname}</td>
+                <td>${ele.age}</td>
+                <td>${ele.gender}</td>
+                <td>${ele.salary}</td>
+                <td>${ele.city}</td>
+                <td>
+                    <button data-id="${index}">删除</button>
+                </td>
+            </tr>
+            `
+        })
+        // console.log(new_arr)
+        tbody.innerHTML = new_arr.join('')
+    }
+    render()
+
+
+    // 2.新增业务
+    const info = document.querySelector('.info')
+    const uname = document.querySelector('.uname')
+    const salary = document.querySelector('.salary')
+    const age = document.querySelector('.age')
+    const city = document.querySelector('.city')
+    const gender = document.querySelector('.gender')
+    // 做非空判断
+    info.addEventListener('submit', function(e) {
+        // 阻止默认行为
+        e.preventDefault()
+        if(!uname.value || !age.value || !salary.value) {
+            return alert('不能为空')
+        }
+        // 给表格添加新数据
+        arr.push({
+            uid: arr.length + 1,
+            uname: uname.value,
+            age: age.value, 
+            gender: gender.value,
+            salary: salary.value,
+            city: city.value
+        })
+        render()
+        this.reset()
+        // 将数据存储到本地存储中
+        localStorage.setItem(`datas`, JSON.stringify(arr))
+    })
+
+    // 3.删除业务
+    tbody.addEventListener('click', function(e) {
+        if(e.target.tagName === 'BUTTON') {
+            if(confirm("确定要删除吗")) {
+                console.log(e.target.dataset)
+                arr.splice(e.target.dataset.id, 1)
+
+                render()
+                // 将最新的arr存到本地存储中
+                localStorage.setItem('datas', JSON.stringify(arr))
+            }
+        }
+    })
+    
+    // 4.关于id的处理，如果表格中需要自动生成id，可能会产生重复，现在要处理重复id的问题
+    // 新增加的序号应该是最后一条数据+1
+    // arr[arr.length - 1].id + 1
+    // 如果没有数据，id = 1
+
+  </script>
+
+</body>
+</html>

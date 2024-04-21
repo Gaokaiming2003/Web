@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .tab {
+      width: 590px;
+      height: 340px;
+      margin: 20px;
+      border: 1px solid #e4e4e4;
+    }
+
+    .tab-nav {
+      width: 100%;
+      height: 60px;
+      line-height: 60px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .tab-nav h3 {
+      font-size: 24px;
+      font-weight: normal;
+      margin-left: 20px;
+    }
+
+    .tab-nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .tab-nav ul li {
+      margin: 0 20px;
+      font-size: 14px;
+    }
+
+    .tab-nav ul li a {
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+      color: #333;
+    }
+
+    .tab-nav ul li a.active {
+      border-color: #e1251b;
+      color: #e1251b;
+    }
+
+    .tab-content {
+      padding: 0 16px;
+    }
+
+    .tab-content .item {
+      display: none;
+    }
+
+    .tab-content .item.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+    <div class="tab">
+        <div class="tab-nav">
+        <h3>每日特价</h3>
+        <ul>
+            <!-- 使用自定义属性，来确定选择的是哪一个 -->
+            <li><a class="active" data-id="0" href="javascript:;">精选</a></li> 
+            <li><a  data-id="1" href="javascript:;" class="">美食</a></li>
+            <li><a  data-id="2" href="javascript:;">百货</a></li>
+            <li><a  data-id="3" href="javascript:;">个护</a></li>
+            <li><a  data-id="4" href="javascript:;">预告</a></li>
+        </ul>
+    </div>
+        <div class="tab-content">
+            <div class="item active"><img src="./img/tab00.png" alt=""></div>
+            <div class="item"><img src="./img/tab01.png" alt=""></div>
+            <div class="item"><img src="./img/tab02.png" alt=""></div>
+            <div class="item"><img src="./img/tab03.png" alt=""></div>
+            <div class="item"><img src="./img/tab04.png" alt=""></div>
+        </div>
+    </div>
+
+    <script>
+        const ul = document.querySelector('.tab .tab-nav ul')
+        /* 也可以选择所有的item */
+        const items = document.querySelectorAll('.tab .tab-content .item')
+
+        ul.addEventListener('click', function(e) {
+            // console.log(e)
+            // 排他思想，移除active，添加active
+            /* 事件的目标标签名是A */
+            if(e.target.tagName === 'A') {
+            document.querySelector('.tab .tab-nav .active').classList.remove('active')
+            e.target.classList.add('active')
+
+            // 对应的盒子移除和显示
+            // console.log(e.target)
+            document.querySelector('.tab .tab-content .active').classList.remove('active')
+            // document.querySelector(`.tab .tab-content .item:nth-child(${Number(e.target.dataset.id) + 1})`).classList.add('active')
+            items[Number(e.target.dataset.id)].classList.add('active')
+            }
+        })
+    </script>
+</body>
+</html>
